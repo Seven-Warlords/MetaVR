@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{76A5FFF6-7935-5713-8FFF-E1761B3CAD4A}</ProjectGuid>
+    <ProjectGuid>{AA295155-BF49-9AB9-5A22-77800876A1ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Meta.Voice.Samples.Shapes</AssemblyName>
@@ -959,15 +959,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Meta.WitAi.csproj">
-      <Project>{19C6C820-EBE7-F7C5-8489-88003023E292}</Project>
+      <Project>{2931D7EC-A7A3-377E-59C9-510E2FBA8597}</Project>
       <Name>Meta.WitAi</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Lib.csproj">
-      <Project>{AE97A0F5-86CD-4517-0D87-14011279DFC1}</Project>
+      <Project>{8990961D-F368-FDF1-C944-B3D286695F95}</Project>
       <Name>Meta.WitAi.Lib</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Runtime.csproj">
-      <Project>{16B5ED7C-561E-F241-23FA-D647DA6D2A2F}</Project>
+      <Project>{3D2487E6-3C64-ED88-F82E-E2E7135FF4D7}</Project>
       <Name>VoiceSDK.Runtime</Name>
     </ProjectReference>
   </ItemGroup>

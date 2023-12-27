@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F251871D-F41E-16FC-63F8-40DFEE7AE18D}</ProjectGuid>
+    <ProjectGuid>{067C29B2-7639-1811-7A1E-D39369926CA9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Meta.Voice.Samples.BuiltInTimer</AssemblyName>
@@ -958,11 +958,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Meta.WitAi.csproj">
-      <Project>{19C6C820-EBE7-F7C5-8489-88003023E292}</Project>
+      <Project>{2931D7EC-A7A3-377E-59C9-510E2FBA8597}</Project>
       <Name>Meta.WitAi</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Lib.csproj">
-      <Project>{AE97A0F5-86CD-4517-0D87-14011279DFC1}</Project>
+      <Project>{8990961D-F368-FDF1-C944-B3D286695F95}</Project>
       <Name>Meta.WitAi.Lib</Name>
     </ProjectReference>
   </ItemGroup>

@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{91B9B3F3-4C73-8D09-4664-A7B5527A0073}</ProjectGuid>
+    <ProjectGuid>{AF2E841E-DF5D-22D1-D7B0-C71862A65CF3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -88,6 +88,7 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainCrossingController.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\AppDeeplink\UI\CustomDebugUI.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\ControllerBoxController.cs" />
+    <Compile Include="Assets\Script\PetItem.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\AugmentedObject.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\HandedInputSelector.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\InteractableToolsInputRouter.cs" />
@@ -1080,6 +1081,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.XR.Management">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1100,6 +1105,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.XR.Management.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
@@ -1108,8 +1117,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.XR.Oculus.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Oculus.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
@@ -1124,6 +1141,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1136,6 +1157,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1144,12 +1169,20 @@
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.XR.Oculus">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Oculus.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
@@ -1175,211 +1208,211 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Meta.WitAi.Lib.csproj">
-      <Project>{AE97A0F5-86CD-4517-0D87-14011279DFC1}</Project>
+      <Project>{8990961D-F368-FDF1-C944-B3D286695F95}</Project>
       <Name>Meta.WitAi.Lib</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.OVR.Editor.csproj">
-      <Project>{9CACC249-282E-F4DB-1141-F0491DE8A27E}</Project>
+      <Project>{F9227E9F-0967-EEE3-C0DB-42F4C08D1310}</Project>
       <Name>Oculus.Interaction.OVR.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Facebook.Wit.Dictation.csproj">
-      <Project>{40DDB566-ED31-5334-F039-C395A965141E}</Project>
+      <Project>{BBF0C976-2D90-F5FB-B8AA-5E1343E5C524}</Project>
       <Name>Facebook.Wit.Dictation</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Samples.LiveUnderstanding.csproj">
-      <Project>{F1D0710F-FA55-AC85-852F-E4414BD9B67B}</Project>
+      <Project>{BB3BF4D1-76F4-26C8-B450-54AE3D672415}</Project>
       <Name>Meta.Voice.Samples.LiveUnderstanding</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Runtime.csproj">
-      <Project>{16B5ED7C-561E-F241-23FA-D647DA6D2A2F}</Project>
+      <Project>{3D2487E6-3C64-ED88-F82E-E2E7135FF4D7}</Project>
       <Name>VoiceSDK.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.Utils.Editor.csproj">
-      <Project>{F7F46B8D-4CD1-8E49-1939-A4DC2546007F}</Project>
+      <Project>{5CE03681-27F7-8816-8C14-98ED50A6CF01}</Project>
       <Name>Oculus.AudioManager.Utils.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{8B305CE3-7626-5A7A-DAF1-8DE20DF2F474}</Project>
+      <Project>{2C1FA8F5-93A8-315A-DEA0-FD099F091014}</Project>
       <Name>Oculus.VR</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.VoiceSDK.Mic.WebGL.csproj">
-      <Project>{BECBF826-7BCF-2A72-2CC9-EFC285BAB657}</Project>
+      <Project>{8A4E78A2-A33E-1380-D36B-AFC656ADDC41}</Project>
       <Name>Meta.VoiceSDK.Mic.WebGL</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Platform.Editor.csproj">
-      <Project>{1BAA76ED-85AA-8D30-12DE-72BFC5C68B53}</Project>
+      <Project>{6D0FADE3-DC2B-34B9-575E-16A7B1471905}</Project>
       <Name>Oculus.Platform.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.LipSync.Editor.csproj">
-      <Project>{B225D9B4-CC78-E90D-1C08-00B9B596E744}</Project>
+      <Project>{8E098CC9-C088-F587-A074-7329307DAB60}</Project>
       <Name>Oculus.LipSync.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.OVR.csproj">
-      <Project>{D19C74F3-413F-CC53-D4F4-B1C299B3ED97}</Project>
+      <Project>{1FFFB59D-3C02-33F4-399E-D8D1F2FFAF39}</Project>
       <Name>Oculus.Interaction.OVR</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Telemetry.csproj">
-      <Project>{D337F601-3650-B6E7-619F-3976CB64D3B3}</Project>
+      <Project>{3D7B0E81-6651-0E88-9EC2-5E44E8D4CC77}</Project>
       <Name>VoiceSDK.Telemetry</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.csproj">
-      <Project>{97AF07F2-52AB-F57D-B0A8-56D1DB274EFD}</Project>
+      <Project>{2E666DFD-BF2A-F651-741E-EF40D2DC3975}</Project>
       <Name>Oculus.AudioManager</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Spatializer.csproj">
-      <Project>{B18E2E8F-BEFD-C8C2-DA49-A5A8515FFBB5}</Project>
+      <Project>{B1690B82-5D16-E4E2-AEC1-EF01544337E6}</Project>
       <Name>Oculus.Spatializer</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.VSDKHub.Editor.csproj">
-      <Project>{75D0F038-1136-0A7E-9E2E-6040BF26A960}</Project>
+      <Project>{E5CE6BD5-50D2-39B8-3645-F65491F3C7E2}</Project>
       <Name>Meta.Voice.VSDKHub.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Hub.Editor.csproj">
-      <Project>{439B7B2A-5393-001F-BF82-093DE7F25BDE}</Project>
+      <Project>{BCB20C3F-8B07-02F1-BD1D-14E3272DE357}</Project>
       <Name>Meta.Voice.Hub.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.TTS.csproj">
-      <Project>{B550EFBB-C692-ADC4-08FA-0FFE44889642}</Project>
+      <Project>{213F0622-A490-60B9-2621-BCFD7D00A3AA}</Project>
       <Name>Meta.WitAi.TTS</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Samples.TTSVoices.csproj">
-      <Project>{A9A24D2B-9170-D252-10AC-9AE2ED0FB0C8}</Project>
+      <Project>{7008BFF8-1D59-0767-5B24-284E10E41E3D}</Project>
       <Name>Meta.Voice.Samples.TTSVoices</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.csproj">
-      <Project>{19C6C820-EBE7-F7C5-8489-88003023E292}</Project>
+      <Project>{2931D7EC-A7A3-377E-59C9-510E2FBA8597}</Project>
       <Name>Meta.WitAi</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.InterfaceSupport.csproj">
-      <Project>{84320ED2-5A94-CA97-BE12-1CD321256635}</Project>
+      <Project>{FACA4A2C-1847-91F2-747E-2B9B1ED15A06}</Project>
       <Name>Oculus.Interaction.InterfaceSupport</Name>
     </ProjectReference>
     <ProjectReference Include="Facebook.Wit.Dictation.Editor.csproj">
-      <Project>{D72CA09B-6DB7-7A9E-96A3-2CA7D51690E6}</Project>
+      <Project>{63813E74-FBEF-C19F-FE38-D510E79D6D51}</Project>
       <Name>Facebook.Wit.Dictation.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.OVR.Samples.csproj">
-      <Project>{C2ACFE5A-5F71-4BC4-CEFE-BD7300F30A93}</Project>
+      <Project>{FEB713A9-5384-62BA-7D4E-CC843D85DC97}</Project>
       <Name>Oculus.Interaction.OVR.Samples</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Samples.BuiltInTimer.csproj">
-      <Project>{F251871D-F41E-16FC-63F8-40DFEE7AE18D}</Project>
+      <Project>{067C29B2-7639-1811-7A1E-D39369926CA9}</Project>
       <Name>Meta.Voice.Samples.BuiltInTimer</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Platform.csproj">
-      <Project>{6AD474D9-4BBC-850B-1638-755D9ABAB936}</Project>
+      <Project>{38A81865-D6ED-F9DD-C2B2-158CA97B95AF}</Project>
       <Name>Oculus.Platform</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Dictation.Runtime.csproj">
-      <Project>{24FA6066-CA4A-9ECB-1AD7-E11D131B1AF5}</Project>
+      <Project>{E767CB4E-0515-CDDE-63DF-E6EDD9A2B633}</Project>
       <Name>VoiceSDK.Dictation.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.LipSync.csproj">
-      <Project>{EE1DBD9B-DF56-93AD-4516-72A9B7660791}</Project>
+      <Project>{DB3D9A43-51C6-82F7-1542-F30A021D6144}</Project>
       <Name>Oculus.LipSync</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Samples.Dictation.csproj">
-      <Project>{E3671CA8-21BB-C027-300E-5DAD6BBAF5E0}</Project>
+      <Project>{498E6D73-FF6A-96D2-74A4-070FA3DC1681}</Project>
       <Name>Meta.Voice.Samples.Dictation</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Conduit.csproj">
-      <Project>{9EBC04A6-F6CC-37F7-BB12-19F54EE41D1A}</Project>
+      <Project>{ED4605CA-A4DA-15A1-58B5-0191D5F9D8E1}</Project>
       <Name>Meta.WitAi.Conduit</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Dictation.Editor.csproj">
-      <Project>{3B9FC8FA-0EC2-BDE4-501C-9BF666D27517}</Project>
+      <Project>{042537B2-5545-C5B3-8A54-A8FD6A060C65}</Project>
       <Name>VoiceSDK.Dictation.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Spatializer.Editor.csproj">
-      <Project>{BCC51980-4D97-6C6E-1F19-383E484BD7D1}</Project>
+      <Project>{E67DE58C-3AA8-E79E-CAE6-5E90C7AE77CC}</Project>
       <Name>Oculus.Spatializer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.TTS.Editor.csproj">
-      <Project>{EBDF4A26-215E-352C-41B5-B3A3B65423D0}</Project>
+      <Project>{902D4692-5257-DA74-69A8-2437B7476553}</Project>
       <Name>Meta.WitAi.TTS.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.Editor.csproj">
-      <Project>{4CE89234-559E-57FE-0D25-EBC59D2F096D}</Project>
+      <Project>{62F29A05-4BEE-E04C-DD88-124FAA3AF80B}</Project>
       <Name>Oculus.Interaction.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="AssistantCoreSDKRuntime.csproj">
-      <Project>{74C6A7A1-7871-0FDB-E963-4016FF4C1645}</Project>
+      <Project>{49606D82-2BAF-ED5F-6C12-9F08030D3C16}</Project>
       <Name>AssistantCoreSDKRuntime</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Samples.LightTraits.csproj">
-      <Project>{3C3C4371-7841-3009-2F1F-3EDC66A2DDE1}</Project>
+      <Project>{5D7450BB-21A6-7CE3-76BA-F180428C1AF3}</Project>
       <Name>Meta.Voice.Samples.LightTraits</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.XR.BuildingBlocks.csproj">
-      <Project>{BD9FD321-386B-827F-9238-52FF04B589CA}</Project>
+      <Project>{92306E5A-CEDB-7257-CE62-3C76D0D31253}</Project>
       <Name>Meta.XR.BuildingBlocks</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Samples.Shapes.csproj">
-      <Project>{76A5FFF6-7935-5713-8FFF-E1761B3CAD4A}</Project>
+      <Project>{AA295155-BF49-9AB9-5A22-77800876A1ED}</Project>
       <Name>Meta.Voice.Samples.Shapes</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.csproj">
-      <Project>{37BAD0AA-516A-2322-64C2-D75C7A9B35E9}</Project>
+      <Project>{CC5FB4E8-EC58-2E6C-0E15-500BE0C0930E}</Project>
       <Name>Oculus.Interaction</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Editor.csproj">
-      <Project>{1BEB1CB3-3970-E79D-39FF-B068FBE879D3}</Project>
+      <Project>{5A6C3621-7793-4066-4FC2-3B19FA5D534F}</Project>
       <Name>VoiceSDK.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Samples.ShapesConduit.csproj">
-      <Project>{370F880C-B96F-D85C-90AD-7A3AF155853F}</Project>
+      <Project>{98C0651F-B64A-5E35-4235-76BB7BC2389B}</Project>
       <Name>Meta.Voice.Samples.ShapesConduit</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.Editor.csproj">
-      <Project>{E36F1622-AAA4-9749-5FE6-DAD93F314F02}</Project>
+      <Project>{9106C60C-3658-359C-9380-F779569B2A2D}</Project>
       <Name>Oculus.VR.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.VoiceSDK.Mic.Other.csproj">
-      <Project>{BC4266DA-958B-59BC-5309-EB15BA18971B}</Project>
+      <Project>{014F8236-C9E2-E0E5-6249-3BD19DE3B46C}</Project>
       <Name>Meta.VoiceSDK.Mic.Other</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Editor.csproj">
-      <Project>{55BC85DF-F058-6B71-8EAC-7E4E7364E58D}</Project>
+      <Project>{6332EF04-05E7-93CD-0FD5-8F3C6EE3D4AE}</Project>
       <Name>Meta.WitAi.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Conduit.Editor.csproj">
-      <Project>{25E6AE07-CBC9-9F04-5F34-626DF7118935}</Project>
+      <Project>{C045EF87-FA92-9B45-7CBD-436340BBD326}</Project>
       <Name>Meta.WitAi.Conduit.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.VoiceSDK.Mic.Common.csproj">
-      <Project>{EF673808-E6A8-2D9A-C9B5-B5601AE4EC8C}</Project>
+      <Project>{1B837777-38AB-C537-F75B-58F878FB7D77}</Project>
       <Name>Meta.VoiceSDK.Mic.Common</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.XR.BuildingBlocks.Editor.csproj">
-      <Project>{497EB788-F77F-B0C2-065D-C7C8B19FF871}</Project>
+      <Project>{BA1B64E9-E6A4-E338-D46D-A08B83B81A58}</Project>
       <Name>Meta.XR.BuildingBlocks.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.Audio.Editor.csproj">
-      <Project>{287376D4-4E16-6AA7-3EA2-ACE84E63ADE7}</Project>
+      <Project>{D6C8CF27-2E3E-8E29-CC88-8E8F1E8E51D7}</Project>
       <Name>Oculus.AudioManager.Audio.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
-      <Project>{6FCB251D-5A10-C841-E9BD-A21C69EB6425}</Project>
+      <Project>{EA00BE58-4F4B-8FC3-6AE5-9155CC31BC6B}</Project>
       <Name>Oculus.VR.Scripts.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.Samples.Editor.csproj">
-      <Project>{613B295B-7B5A-4459-9DA3-83B607E1FE9B}</Project>
+      <Project>{073F7239-3C35-A683-E139-5890F47073AD}</Project>
       <Name>Oculus.Interaction.Samples.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Hub.Runtime.csproj">
-      <Project>{0173B0C1-E791-E4CB-7E8A-0B8074E460EB}</Project>
+      <Project>{C283B570-883D-E5F3-CB46-AAE2FCA1D2EA}</Project>
       <Name>Meta.Voice.Hub.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="AssistantCoreSDKEditor.csproj">
-      <Project>{909A73D6-7F4E-6012-6C36-6D3C1CE979B9}</Project>
+      <Project>{2CC9A499-1624-94BF-8069-18F0B53B9734}</Project>
       <Name>AssistantCoreSDKEditor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.Voice.Samples.Chess.csproj">
-      <Project>{E5722A53-9321-352B-C0AB-ED647AEAF3B0}</Project>
+      <Project>{121CD7C6-0EAB-ECFD-E2B5-A587EEBA711C}</Project>
       <Name>Meta.Voice.Samples.Chess</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAI.Lib.Editor.csproj">
-      <Project>{C16E6D86-44A6-7EF8-CA43-3023B9A9C921}</Project>
+      <Project>{3CD1F974-BBF9-5937-4CEF-C4E177389E2D}</Project>
       <Name>Meta.WitAI.Lib.Editor</Name>
     </ProjectReference>
   </ItemGroup>
