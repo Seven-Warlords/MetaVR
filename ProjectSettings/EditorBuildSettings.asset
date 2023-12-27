@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/AngryBot2Net-master/AngryBot2Net-master/Assets/Scenes/Lobby.unity
+    guid: 91abc19d226a04fb78569feefeaf4fcb
+  - enabled: 1
+    path: Assets/AngryBot2Net-master/AngryBot2Net-master/Assets/Scenes/BattleField.unity
+    guid: c50363d2712e86b49baeb030c5cee2fc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3f8eb42e93173c744878a5df790163b0, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 427037e9d4218f5469746b3ef14e7fdb, type: 2}
